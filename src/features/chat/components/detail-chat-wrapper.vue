@@ -61,7 +61,7 @@ function handleSubmit() {
 
 <template>
 	<div
-		class="w-full bg-white rounded-lg border border-gray-200 overflow-hidden h-full relative"
+		class="w-full bg-white dark:bg-transparent rounded-lg border border-gray-200 dark:border-gray-300/20 overflow-hidden h-full relative"
 	>
 		<ChatHeader
 			:name="customer?.name || ''"
@@ -69,7 +69,7 @@ function handleSubmit() {
 			:user_id="user_id"
 		/>
 		<div
-			class="w-full h-[calc(100%-40px)] overflow-y-auto p-4 pb-20 scroll-smooth"
+			class="w-full bg-[#f3f3f3] dark:bg-[#2a2929] h-[calc(100%-40px)] overflow-y-auto p-4 pb-20 scroll-smooth"
 			ref="chatContainer"
 		>
 			<ChatBubble
@@ -82,19 +82,19 @@ function handleSubmit() {
 			/>
 		</div>
 		<div
-			class="absolute bottom-0 w-full bg-white h-fit border-t border-gray-200 p-2.5"
+			class="absolute bottom-0 w-full bg-white dark:bg-[#2a2929] dark:border-gray-300/20 h-fit border-t border-gray-200 p-2.5"
 		>
 			<form @submit.prevent="handleSubmit" class="flex gap-2">
 				<input
 					v-model="newMessage"
 					placeholder="Apa kabar"
-					class="border w-full h-10 border-gray-200 px-2 rounded-lg bg-gray-50"
+					class="border w-full h-10 border-gray-200 px-2 rounded-lg bg-gray-50 dark:bg-gray-400/40 dark:border-gray-300/20 dark:text-white"
 				/>
 				<button
 					type="submit"
-					class="bg-blue-600 justify-center flex items-center rounded-lg text-white px-2 pr-2.5 gap-2"
+					class="bg-[#23B098] dark:bg-[#1fa187aa] justify-center flex items-center rounded-lg text-white px-2 pr-2.5 gap-2"
 				>
-					<SendHorizonal />
+					<SendHorizonal :size="16" />
 					Send
 				</button>
 			</form>

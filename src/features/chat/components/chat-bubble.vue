@@ -23,7 +23,7 @@ const isCustomer = props.type === 'customer'
 		<div
 			:class="[
 				'max-w-xs px-4 py-2 rounded-lg',
-				isCustomer ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black',
+				isCustomer ? 'bg-white dark:bg-gray-400/40 dark:text-white text-gray-900' : 'bg-[#23B098] dark:bg-[#1fa187aa] text-white',
 			]"
 		>
 			{{ message }}

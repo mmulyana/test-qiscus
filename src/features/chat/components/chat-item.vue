@@ -15,18 +15,18 @@ defineProps<{
 
 <template>
 	<div
-		class="flex items-center gap-3 px-4 py-4 cursor-pointer hover:bg-gray-100 relative"
-		:class="{ 'bg-gray-100': active }"
+		class="flex items-center gap-3 px-4 py-4 cursor-pointer hover:bg-gray-100 hover:dark:bg-gray-500/20 relative"
+		:class="{ 'bg-gray-100 dark:bg-gray-500/20': active }"
 		@click="onClick"
 	>
-		<div v-if="active" class="absolute h-full w-1 bg-blue-600 left-0"></div>
+		<div v-if="active" class="absolute h-full w-0.5 bg-[#23B098] left-0"></div>
 		<img
 			:src="user_avatar_url"
 			alt="User Avatar"
 			class="w-10 h-10 rounded-full object-cover bg-gray-300"
 		/>
 		<div class="flex-1">
-			<div class="text-sm font-semibold">{{ name }}</div>
+			<div class="text-sm font-semibold dark:text-white">{{ name }}</div>
 			<div class="text-xs text-gray-500">
 				{{ last_comment_text }}
 			</div>
