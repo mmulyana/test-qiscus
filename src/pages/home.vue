@@ -9,16 +9,16 @@ const chatStore = useChatStore()
 const { selecteds } = storeToRefs(chatStore)
 
 const layoutClass = computed(() => {
-	if (selecteds.value.length > 1) return 'grid grid-cols-2'
-	return 'grid grid-cols-'
+	if (selecteds.value.length > 1) return 'grid grid-cols-2 min-h-0'
+	return 'grid grid-cols-1 min-h-0'
 })
 </script>
 
 <template>
-	<div class="flex gap-4">
+	<div class="flex gap-4 h-[calc(100vh-2rem)]">
 		<ChatWrapper />
 		<div class="flex-1 gap-4" :class="layoutClass">
-			<div v-for="item in selecteds" class="w-full min-w-full">
+			<div v-for="item in selecteds" class="w-full overflow-y-auto">
 				<DetailChatWrapper :user_id="item.user_id" />
 			</div>
 		</div>
