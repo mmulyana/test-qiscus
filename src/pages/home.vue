@@ -25,9 +25,11 @@ const layoutClass = computed(() => {
 	<div class="flex gap-4 h-[calc(100vh-2rem)] pl-16">
 		<ChatWrapper />
 		<div class="flex-1 gap-4" :class="layoutClass">
-			<div v-for="item in selecteds" class="w-full overflow-y-auto">
-				<DetailChatWrapper :user_id="item.user_id" />
-			</div>
+			<DetailChatWrapper
+				v-for="item in selecteds"
+				:key="item.user_id"
+				:user_id="item.user_id"
+			/>
 		</div>
 	</div>
 </template>
